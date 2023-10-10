@@ -1,4 +1,4 @@
-# trajectory-detection
+# Trajectory-detection
 
 ## To get test data
 
@@ -8,5 +8,3 @@ python3 main.py
 ```
 
 normal trajectories and abnormal trajectories will generate at test_data folder
-
-## results are in sentences.txt and trajactories.txt files
