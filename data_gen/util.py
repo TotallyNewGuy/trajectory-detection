@@ -128,8 +128,8 @@ def resize(
     # ================= constructing =================
     cords_list = [coordinates[i] for i in cords]
     north, south, west, east = get_boundary(cords_list)
-    ver_blk_len = (north - south) / default_sub_block_len
-    hor_blk_len = (east - west) / default_sub_block_len
+    ver_blk_len = (north - south) // default_sub_block_len
+    hor_blk_len = (east - west) // default_sub_block_len
     new_words = []
     prev_word = ""
     for i in cords:
@@ -164,12 +164,12 @@ def resize(
         size = len(temp_cords)
         # ================= constructing =================
         limit = default_block_num * resize_factor
-        if size > 3:
+        if size > 5:
             resize(coordinates, temp_cords, cord_2_word, word_2_cord, 2)
 
 
-def write_trajactories(trajactories: List[List[List[int]]]) -> None:
-    filename = "trajactories.txt"
+def write_trajactories(trajactories: List[List[List[int]]], filename: str) -> None:
+    filename = filename
     with open(filename, "w") as file:
         for t in trajactories:
             file.write(str(t))
